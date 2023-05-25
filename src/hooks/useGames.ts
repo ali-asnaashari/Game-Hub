@@ -13,7 +13,8 @@ export interface Game {
     name: string,
     background_image: string,
     // Array of Objects
-    parent_platforms: { platform: Platform }[]
+    parent_platforms: { platform: Platform }[],
+    metacritic:number,
 }
 
 interface FetchGameResponse {
