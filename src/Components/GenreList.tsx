@@ -4,7 +4,7 @@ const GenreList = () => {
 
     const {genres} = useGenre();
 
-    return(
+    return (
         <ul>
             {genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
         </ul>
