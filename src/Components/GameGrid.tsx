@@ -5,12 +5,12 @@ import apiClient from "../Services/api-client";
 interface Game {
     id: number,
     name: string,
-};
+}
 
 interface FetchGameResponse {
     count: number,
     results: Game[],
-};
+}
 const GameGrid = () => {
 
     // Storing Game Objects
