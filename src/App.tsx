@@ -1,7 +1,13 @@
 import {Grid, GridItem, Show} from "@chakra-ui/react";
 import NavBar from "./Components/NavBar";
+import {useEffect} from "react";
 
 function App() {
+
+    useEffect(() => {
+        document.title="Game-Hub";
+    })
+
     return (
         <Grid templateAreas={{
             base: `"nav" "main"`,
