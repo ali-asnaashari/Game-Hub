@@ -1,12 +1,13 @@
 import {Grid, GridItem, Show} from "@chakra-ui/react";
 import NavBar from "./Components/NavBar";
 import {useEffect} from "react";
+import GameGrid from "./Components/GameGrid";
 
 function App() {
 
     useEffect(() => {
-        document.title="Game-Hub";
-    })
+        document.title = "Game-Hub";
+    }, [])
 
     return (
         <Grid templateAreas={{
@@ -14,13 +15,15 @@ function App() {
             lg: `"nav nav" "aside main"` //1024 px
         }}>
             <GridItem area='nav'>
-                <NavBar />
+                <NavBar/>
             </GridItem>
             <Show above='lg'>
                 <GridItem area='aside'>Aside</GridItem>
             </Show>
 
-            <GridItem area='main'>Main</GridItem>
+            <GridItem area='main'>
+                <GameGrid/>
+            </GridItem>
         </Grid>
     );
 }
