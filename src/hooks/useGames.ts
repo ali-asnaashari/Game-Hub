@@ -14,7 +14,7 @@ export interface Game {
     background_image: string,
     // Array of Objects
     parent_platforms: { platform: Platform }[],
-    metacritic:number,
+    metacritic: number,
 }
 
 interface FetchGameResponse {
@@ -50,7 +50,7 @@ const useGames = () => {
         return () => controller.abort();
     }, []);
 
-    return {games, error,isLoading};
+    return {games, error, isLoading};
 }
 
 export default useGames;
