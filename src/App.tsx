@@ -5,12 +5,14 @@ import GameGrid from "./Components/GameGrid";
 import GenreList from "./Components/GenreList";
 import {Genre} from "./hooks/useGenres";
 import PlatformSelector from "./Components/PlatformSelector";
+import {Platform} from "./hooks/useGames";
 
 function App() {
 
     // used for when click in specific  Genres , Gamed Filtered
     const [selectedGenres, setSelectedGenres] = useState<Genre | null>(null);
 
+    const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
 
     useEffect(() => {
         document.title = "Game-Hub";
@@ -37,8 +39,9 @@ function App() {
             </Show>
 
             <GridItem area='main'>
-                <PlatformSelector/>
-                <GameGrid selectedGenre={selectedGenres}/>
+                <PlatformSelector selectedPlatform={selectedPlatform}
+                                  onSelectPlatform={(platform) => setSelectedPlatform(platform)}/>
+                <GameGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenres}/>
             </GridItem>
         </Grid>
     );
